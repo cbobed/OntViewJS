@@ -168,6 +168,7 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
         </dependency>
+		
     </dependencies>
 
     <build>
@@ -187,11 +188,11 @@
 			  <artifactId>maven-compiler-plugin</artifactId>
 			  <version>3.8.1</version>
 			  <configuration>
-			  <configuration>
-				  <source>1.8</source>
-				  <target>1.9</target>
-				</configuration>
 				<compilerArgs>
+					<arg>--module-path</arg> 
+					<arg>/usr/share/openjfx/lib </arg>
+					<arg> --add-modules</arg> 
+					<arg>javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web</arg>
 				  <arg>--add-exports</arg>
 				  <arg>javafx.graphics/com.sun.glass.ui=ALL-UNNAMED</arg>
 				</compilerArgs>
