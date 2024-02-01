@@ -13,10 +13,10 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>ontview</name>
-    <description>Demo project for Spring Boot</description>
+    <description>OntViewJS</description>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>1.9</java.version>
     </properties>
 
     <dependencies>
@@ -66,79 +66,92 @@
         <dependency>
             <groupId>ontview</groupId>
             <artifactId>owlapi-distribution</artifactId>
-            <scope>provided</scope>
+            <scope>system</scope>
             <version>1.0</version>
-        </dependency>
+			<systemPath>${project.basedir}/lib/pellet/owlapi-distribution-3.4.3-bin.jar</systemPath>		
+	    </dependency>
         <dependency>
             <groupId>ontview</groupId>
             <artifactId>facility-package</artifactId>
-            <scope>provided</scope>
+            <scope>system</scope>
+			<systemPath>${project.basedir}/lib/kce/facility.jar</systemPath>
             <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>ontview</groupId>
             <artifactId>taxonomy-makers</artifactId>
-            <scope>provided</scope>
+            <scope>system</scope>
+			<systemPath>${project.basedir}/lib/kce/taxonomy-makers.jar</systemPath>
             <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>ontview</groupId>
             <artifactId>taxonomy</artifactId>
-            <scope>provided</scope>
+            <scope>system</scope>
+			<systemPath>${project.basedir}/lib/kce/taxonomy.jar</systemPath>
             <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>ontview</groupId>
             <artifactId>structuralReducer</artifactId>
-            <scope>provided</scope>
+            <scope>system</scope>
+			<systemPath>${project.basedir}/lib/kce/structuralReducer.jar</systemPath>
             <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>ontview</groupId>
             <artifactId>pedviz</artifactId>
-            <scope>provided</scope>
+            <scope>system</scope>
+			<systemPath>${project.basedir}/lib/pedviz_0.15.jar</systemPath>            
             <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>ontview</groupId>
             <artifactId>kce</artifactId>
-            <scope>provided</scope>
+            <scope>system</scope>
+			<systemPath>${project.basedir}/lib/kce/kce.jar</systemPath>
             <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>ontview</groupId>
             <artifactId>swingLayouts</artifactId>
-            <scope>provided</scope>
+            <scope>system</scope>
+			<systemPath>${project.basedir}/lib/visualSwing/org.dyno.visual.swing.layouts_0.9.12.I20090527-2200.jar</systemPath>
             <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>ontview</groupId>
             <artifactId>swing</artifactId>
-            <scope>provided</scope>
+            <scope>system</scope>
+			<systemPath>${project.basedir}/lib/visualSwing/org.dyno.visual.swing_0.9.12.I20090527-2200.jar</systemPath>
             <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>ontview</groupId>
             <artifactId>jfact</artifactId>
-            <scope>provided</scope>
+            <scope>system</scope>
+			<systemPath>${project.basedir}/lib/jfact/jfact.jar</systemPath>
             <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>ontview</groupId>
             <artifactId>pellet</artifactId>
-            <scope>provided</scope>
+            <scope>system</scope>
+			<systemPath>${project.basedir}/lib/pellet/pellet-2.3.1.jar</systemPath>
             <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>ontview</groupId>
             <artifactId>aterm</artifactId>
-            <scope>provided</scope>
+            <scope>system</scope>
+			<systemPath>${project.basedir}/lib/pellet/aterm-java-1.6.jar</systemPath>
             <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>ontview</groupId>
             <artifactId>jgrapht</artifactId>
-            <scope>provided</scope>
+            <scope>system</scope>
+			<systemPath>${project.basedir}/lib/pellet/jgrapht-jdk1.5.jar</systemPath>
             <version>1.0</version>
         </dependency>
         <dependency>
@@ -168,6 +181,22 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
+			
+			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-compiler-plugin</artifactId>
+			  <version>3.8.1</version>
+			  <configuration>
+			  <configuration>
+				  <source>1.8</source>
+				  <target>1.9</target>
+				</configuration>
+				<compilerArgs>
+				  <arg>--add-exports</arg>
+				  <arg>javafx.graphics/com.sun.glass.ui=ALL-UNNAMED</arg>
+				</compilerArgs>
+				</configuration>
+			</plugin>			
         </plugins>
         <resources>
             <resource>
@@ -175,5 +204,4 @@
             </resource>
         </resources>
     </build>
-
 </project>
